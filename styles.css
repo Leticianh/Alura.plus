@@ -1,0 +1,216 @@
+:root { /*variáveis*/
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #c0c0c0;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030C;
+    --font-principal: 'inter';
+    --interacao-botao: #79b0f3;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal); /*cor padrão das letras no body*/
+    font-family: var(--font-principal);
+    font-size: 16px;
+    font-weight: 400; /*peso da fonte*/
+}
+
+* { /*definir a margem*/
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    background-image: url("img/Background.png"); /*Colocamos essa imagem de uma forma diferente das outras porque ela não
+altera em nada a experiência do usuário na prática, é apenas decorativa*/
+    background-repeat: no-repeat;  /*Não repetir o backgroud do body geral*/ 
+    background-size: contain; /*Alterar o tamanho do background de tudo que está dentro da class principal*/
+    align-items: center; /*alinha todos os itens*/
+    text-align: center; /*alinha os textos e imagens*/
+}
+
+.container {
+    height: 100vh; /*A altura de tudo que está na classe container é de 100% da tela do dispositivo*/
+    display: grid; /*diferente do flexbox, o grid nos permite trabalhar com layouts em 2 dimensões (linhas e colunas)*/
+    grid-template-columns: 50% 50%; /*coloca o grid em 2 colunas ocupando 50% do espaço*/
+
+}
+
+.container_botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px; /*Cria bordas redondas para o botão*/
+    padding: 1em; /*cria uma margem no botão*/
+    color: var(--branco-principal);
+    display: block; /*o botão ocupa todo o bloco (linha) dele da página*/
+    text-decoration: none; /*tirar o sublinhado ou qualquer decoração do texto*/
+    margin-bottom: 1em;
+}
+
+.botao_secundario { /*não precisa repetir o nome da class container_botao, pois ele já entende que estão juntas*/
+    background-color: transparent;
+    border: 2px solid var(--branco-principal); /*solid é a borda em forma de uma linha sólida*/
+}   
+
+.container_aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+
+}
+
+.container_titulo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.container_imagem {
+    margin: 1em 0 2em 0; /*imagina que é um relógio*/
+}
+
+.container_caixa {
+    margin: 0 6em;
+}
+
+.secundario_imagem {
+    width: 80%;
+}
+
+.secundario {
+    align-items: center;
+    margin: 0 10em;
+}
+
+.descricao_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--branco-principal);
+    margin-bottom: 0.1em;
+}
+
+.descricao_texto {
+    color: var(--cinza-secundario);
+}
+
+.secundario_botao {
+    display: inline-block; /*transforma em linha e quebra só para o seu espaço*/
+    margin-top: 1em;
+}
+
+.container_descricao {
+    padding: 2em;
+}
+
+.dispositivos_lista {
+    display: flex; /*dá para usar o grid também*/
+    justify-content: center; /*alinhar os elementos ao longo do eixo principal*/
+    list-style-type: none; /*tirar os pontos do tópico que ficou por ser uma lista*/
+    margin: 5em 0em;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos_titulo {
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista_item {
+    font-size: 32px;
+    color: var(--branco-principal);
+}
+.rodape {
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.rodape_lista {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 2em; /*espaço acima do elemento*/
+}
+
+.lista_link a{ /*tem que colocar esse a por se tratar de um link*/
+    text-decoration: none;
+    color: var(--branco-principal);
+    margin-left: 1em; /*espaçamento esquerdo*/
+}
+
+.rodape_texto {
+    margin: 1.5em 18em 0em 18em;
+    font-size: 14px;
+    color: var(--cinza-secundario);
+}
+
+.lista_link a:hover { /*mudar a cor do link quando passar o mouse por cima*/
+    color: var(--botao-azul);
+}
+
+.lista_link a:active {
+    color: purple;
+}
+
+.container_botao:hover {
+    background-color: var(--interacao-botao);
+    color: var(--cor-de-fundo);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        display: block; /*posicionamento em blocos um abaixo do outro*/
+        background-image: none;
+    }
+
+    .container_imagem {
+        width: 50vw;
+    }
+
+    .container_caixa {
+        margin: 2em 2em;
+    }
+
+    .secundario {
+        margin: 0;
+        text-align: center;
+    }
+
+    .secundario_imagem {
+        width: 60vw;
+        margin-top: 1em;
+    }
+
+    .dispositivos_lista {
+        display: block;
+    }
+
+    .rodape_lista {
+        display: block;
+    }
+
+    .container_titulo {
+        font-size: 23px;
+    }
+
+    .descricao_titulo {
+        font-size: 30px;
+    }
+
+    .descricao_texto {
+        font-size: 15px;
+    }
+
+    .dispositivos_titulo {
+        font-size: 30px;
+    }
+
+    .lista_link {
+        font-size: 12px;
+    }
+
+    .rodape_texto {
+        font-size: 10px;
+        margin: 1em;
+    }
+     
+}
